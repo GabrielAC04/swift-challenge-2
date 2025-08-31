@@ -1,0 +1,206 @@
+/* HOME */
+
+
+
+
+
+
+/*------------------/*
+
+/* GUIA */
+
+body {
+    background-color: #1a1814;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.btn {
+    background-color: #DC4405;
+}
+
+.container-main {
+    max-width: 1024px;
+    margin: 2rem auto;
+    background: linear-gradient(rgba(250, 207, 143, 0.8)),
+        url("/assets/img/lojaSwift.jpg") no-repeat center center fixed;
+    background-size: cover;
+    border: 8px solid #e4dbcf;
+    border-radius: 10px;
+    display: flex;
+    height: 505px;
+    box-shadow: 0 4px 15px rgba(197, 197, 197, 0.9);
+    overflow: hidden;
+    position: relative;
+}
+
+.character-area {
+    position: relative;
+    flex: 0 0 40%;
+    background: url("/assets/img/atendente.png") center center/contain no-repeat;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+    border-radius: 0.5rem;
+}
+
+.back-btn {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 10;
+    user-select: none;
+}
+
+.chat-container {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    margin-right: 1rem;
+}
+
+.chat-bubble {
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
+    background-color: #d94b00;
+    border-radius: 1rem 1rem 1rem 0.3rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Verdana', sans-serif;
+    max-width: 480px;
+    position: relative;
+    user-select: none;
+    margin-bottom: 1.5rem;
+}
+
+.chat-bubble::before {
+    content: "Swift";
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background: #ff5315;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 2px 8px;
+    border-radius: 1rem 1rem 1rem 0.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.9rem;
+    max-width: 500px;
+}
+
+.card-custom {
+    background: #d94b00;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.card-custom:hover,
+.card-custom:focus {
+    background-color: #ff5e19;
+    box-shadow: 0 4px 15px rgb(255 94 25 / 0.6);
+    transform: translateY(-4px);
+    outline: none;
+    z-index: 5;
+}
+
+.card-custom img {
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 2px solid #e26100;
+    display: block;
+    user-select: none;
+}
+
+.card-label {
+    padding: 0.5rem 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    text-shadow: 0 0 1px rgb(0 0 0 / 0.8);
+    line-height: 1.2;
+}
+
+.card-value-icon {
+    position: absolute;
+    bottom: -6px;
+    right: -5px;
+    background: #ffc13b;
+    color: #623e00;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0 8px;
+    border-radius: 4px;
+    line-height: 1.2;
+    user-select: none;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Highlight selected card */
+.selected {
+    box-shadow: 0 0 12px 3px #ffd5aa !important;
+    transform: translateY(-3px) !important;
+    z-index: 10 !important;
+}
+
+.next-btn {
+    align-self: flex-end;
+    margin-left: auto;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
+}
+
+@media (max-width: 768px) {
+    .container-main {
+        flex-direction: column;
+        height: auto;
+        border-width: 6px;
+        margin: 1rem 0.8rem;
+    }
+
+    .character-area {
+        flex-basis: auto;
+        margin: 0 auto;
+        width: 90%;
+        height: 280px;
+        background-size: contain;
+    }
+
+    .chat-container {
+        margin-inline: 10px;
+    }
+
+    .chat-bubble {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .cards-grid {
+        max-width: 100%;
+        gap: 0.7rem;
+    }
+
+    .back-btn {
+        left: 0;
+    }
+
+}
+
+/*------------------/*
