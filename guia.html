@@ -7,85 +7,229 @@
   <title>Swift atendimento</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="js" href="assets/js/script.js" />
-
 </head>
 
 <body>
-  <main class="container-main" role="main" aria-label="Swift product selection interface">
+  <div id="carouselExample" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
+    <div class="carousel-inner">
 
-    <section class="character-area" aria-hidden="true">
-      <button class="btn btn-danger back-btn" aria-label="Voltar para a tela anterior" id="btnBack" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
-          viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-          <path fill-rule="evenodd"
-            d="M15 8a.5.5 0 0 1-.5.5H2.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
-        </svg>
-        Voltar
-      </button>
-    </section>
+      <!-- Tela 1 - Dados do cliente -->
+      <div class="carousel-item active" data-bs-interval="false" id="tela1">
+        <main class="container-main" role="main" aria-label="Swift client data interface">
+          <section class="character-area" aria-hidden="true">
+            <button class="btn btn-danger back-btn" aria-label="Voltar para a tela anterior" id="btnBack1" type="button"
+              data-bs-target="#carouselExample" data-bs-slide="prev">
+              ← Voltar
+            </button>
+          </section>
 
-    <section class="chat-container" aria-live="polite" aria-atomic="true" aria-relevant="all">
-      <div class="chat-bubble" id="chatBubble" role="alert">
-        Ótima escolha!! E você já tem alguma preferência de corte?
-      </div>
-      <div class="cards-grid" role="list" aria-label="Opções de cortes de carne">
-        <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="file_peito"
-          aria-label="Filé de peito">
-          <img
-            src="./assets/img/cortes de carne (frango)/filé de peito.jpg"
-            alt="Pedaços de filé de peito de frango grelhados servidos com vagens" loading="lazy"
-            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a8762bae-0bfe-49aa-8162-3f7b686fe74e.png';" />
-          <div class="card-label text-capitalize">filé de peito</div>
-        </div>
-        <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="coxa_sobrecoxa"
-          aria-label="Coxa e sobrecoxa">
-          <img
-            src="./assets/img/cortes de carne (frango)/coxa e sobrecoxa.jpg"
-            alt="Coxa e sobrecoxa de frango grelhada com estilo assado" loading="lazy"
-            onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
-          <div class="card-label text-capitalize">coxa & sobrecoxa</div>
-        </div>
-        <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="frango_cubos"
-          aria-label="Frango em cubos">
-          <img
-            src="./assets/img/cortes de carne (frango)/frangos em cubo.jpg"
-            alt="Prato com cubos de frango misturado com legumes coloridos" loading="lazy"
-            onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
-          <div class="card-label text-capitalize">frango em cubos</div>
-          <div class="card-value-icon" aria-hidden="true">$</div>
-        </div>
-        <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="tulipa" aria-label="Tulipa">
-          <img
-            src="./assets/img/cortes de carne (frango)/tulipa de frango.jpg"
-            alt="Espetos de tulipas de frango grelhadas em prato rústico" loading="lazy"
-            onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
-          <div class="card-label text-capitalize">tulipa</div>
-        </div>
-        <div class="card-custom card-interactive d-flex align-items-center justify-content-center" role="listitem"
-          tabindex="0" data-item="outro" aria-label="Outro tipo de corte" style="font-size:1.2rem;">
-          <div class="card-label m-0">Outro...</div>
-        </div>
-        <button class="btn btn-danger next-btn" aria-label="Ir para a próxima tela" id="btnNext" type="button">
-          Continuar
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
-            viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path fill-rule="evenodd"
-              d="M1 8a.5.5 0 0 0 .5.5h11.793l-4.147 4.146a.5.5 0 0 0 .708.708l5-5a.5.5 0 0 0 0-.708l-5-5a.5.5 0 1 0-.708.708L13.293 7.5H1.5A.5.5 0 0 0 1 8z" />
-          </svg>
-        </button>
+          <section class="chat-container" aria-live="polite" aria-atomic="true" aria-relevant="all">
+            <div class="chat-bubble" id="chatBubble1" role="alert">
+              É um prazer te ajudar! Nos informar seu <u>nome</u> e <u>CEP</u> por gentileza?
+            </div>
+            <div class="cards-grid" role="form" aria-label="Dados do cliente" id="clientDataForm">
+              <div class="input-group">
+                <input type="text" id="clientName" placeholder="Nome" aria-label="Nome do cliente">
+              </div>
+
+              <div class="input-group">
+                <input type="text" id="clientCep" placeholder="CEP" aria-label="CEP do cliente">
+              </div>
+
+              <button class="btn btn-danger next-btn" aria-label="Ir para a próxima tela" id="btnNext1" type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next" disabled>
+                Continuar →
+              </button>
+              <a href="#" class="cep-link">Não sabe seu CEP? Clique aqui.</a>
+            </div>
+          </section>
+        </main>
       </div>
 
-    </section>
-  </main>
+
+      <!-- Tela 2: Pergunta sobre a ocasião da compra -->
+      <div class="carousel-item" data-bs-interval="false" id="tela2">
+        <main class="container-main" role="main" aria-label="Swift product selection interface">
+          <section class="character-area" aria-hidden="true">
+            <button class="btn btn-danger back-btn" aria-label="Voltar para a tela anterior" id="btnBack2" type="button"
+              data-bs-target="#carouselExample" data-bs-slide="prev" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 1-.5.5H2.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+              </svg>
+              Voltar
+            </button>
+          </section>
+          <section class="chat-container" aria-live="polite" aria-atomic="true" aria-relevant="all">
+            <div class="chat-bubble" id="chatBubble2" role="alert">
+              Ótimo! Agora me conta: para qual ocasião você está comprando?
+            </div>
+            <div class="cards-grid" role="list" aria-label="Ocasiões de compra" id="occasionSelection">
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-occasion="churrasco">Churrasco
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-occasion="refeicao">Refeição
+                Rápida</div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-occasion="jantar">Jantar
+                Especial</div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-occasion="almoco">Almoço dia a
+                dia</div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-occasion="master">Master cheff
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-occasion="outro">Outro</div>
+              <button class="btn btn-danger next-btn" aria-label="Ir para a próxima tela" id="btnNext2" type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next" disabled>
+                Continuar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 0 .5.5h11.793l-4.147 4.146a.5.5 0 0 0 .708.708l5-5a.5.5 0 0 0 0-.708l-5-5a.5.5 0 1 0-.708.708L13.293 7.5H1.5A.5.5 0 0 0 1 8z" />
+                </svg>
+              </button>
+            </div>
+          </section>
+        </main>
+      </div>
+
+
+      <!-- Tela 3: Seleção do tipo de carne -->
+      <div class="carousel-item" data-bs-interval="false">
+        <main class="container-main" role="main" aria-label="Swift product selection interface">
+          <section class="character-area" aria-hidden="true">
+            <button class="btn btn-danger back-btn" aria-label="Voltar para a tela anterior" id="btnBack3" type="button"
+              data-bs-target="#carouselExample" data-bs-slide="prev" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 1-.5.5H2.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+              </svg>
+              Voltar
+            </button>
+          </section>
+          <section class="chat-container" aria-live="polite" aria-atomic="true" aria-relevant="all">
+            <div class="chat-bubble" id="chatBubble3" role="alert">
+              Ótima escolha!! Por favor, selecione o tipo de carne:
+            </div>
+            <!-- Seleção do tipo de carne -->
+            <div class="cards-grid" role="list" aria-label="Tipos de carne" id="meatTypeSelection">
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-meat="suina"
+                aria-label="Carne suína">
+                <img src="./assets/img/carnes/suína.jpeg" alt="Imagem de carne suína" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">Suína</div>
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-meat="bovina"
+                aria-label="Carne bovina">
+                <img src="./assets/img/carnes/bovina.jpg" alt="Imagem de carne bovina" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">Bovina</div>
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-meat="peixe"
+                aria-label="Peixe">
+                <img src="./assets/img/carnes/peixe.jpeg" alt="Imagem de peixe" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">Peixe</div>
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-meat="frango"
+                aria-label="Frango">
+                <img src="./assets/img/carnes/frango.jpeg" alt="Imagem de frango" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">Frango</div>
+              </div>
+              <div class="card-custom card-interactive d-flex align-items-center justify-content-center" role="listitem"
+                tabindex="0" data-meat="outro" aria-label="Outro tipo de carne" style="font-size:1.2rem;">
+                <div class="card-label m-0">Outro...</div>
+              </div>
+              <button class="btn btn-danger next-btn" aria-label="Ir para a próxima tela" id="btnNext3" type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next" disabled>
+                Continuar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 0 .5.5h11.793l-4.147 4.146a.5.5 0 0 0 .708.708l5-5a.5.5 0 0 0 0-.708l-5-5a.5.5 0 1 0-.708.708L13.293 7.5H1.5A.5.5 0 0 0 1 8z" />
+                </svg>
+              </button>
+            </div>
+          </section>
+        </main>
+      </div>
+
+
+      <!-- Tela 4: Seleção do corte da carne -->
+      <div class="carousel-item" data-bs-interval="false">
+        <main class="container-main" role="main" aria-label="Swift product selection interface">
+          <section class="character-area" aria-hidden="true">
+            <button class="btn btn-danger back-btn" aria-label="Voltar para a tela anterior" id="btnBack4" type="button"
+              data-bs-target="#carouselExample" data-bs-slide="prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 1-.5.5H2.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+              </svg>
+              Voltar
+            </button>
+          </section>
+          <section class="chat-container" aria-live="polite" aria-atomic="true" aria-relevant="all">
+            <div class="chat-bubble" id="chatBubble4" role="alert">
+              Ótima escolha!! E você já tem alguma preferência de corte?
+            </div>
+            <div class="cards-grid" role="list" aria-label="Opções de cortes de carne" id="cutSelection">
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="file_peito"
+                aria-label="Filé de peito">
+                <img src="./assets/img/cortes de carne (frango)/filé de peito.jpg"
+                  alt="Pedaços de filé de peito de frango grelhados servidos com vagens" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a8762bae-0bfe-49aa-8162-3f7b686fe74e.png';" />
+                <div class="card-label text-capitalize">filé de peito</div>
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="coxa_sobrecoxa"
+                aria-label="Coxa e sobrecoxa">
+                <img src="./assets/img/cortes de carne (frango)/coxa e sobrecoxa.jpg"
+                  alt="Coxa e sobrecoxa de frango grelhada com estilo assado" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">coxa & sobrecoxa</div>
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="frango_cubos"
+                aria-label="Frango em cubos">
+                <img src="./assets/img/cortes de carne (frango)/frangos em cubo.jpg"
+                  alt="Prato com cubos de frango misturado com legumes coloridos" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">frango em cubos</div>
+                <div class="card-value-icon" aria-hidden="true">$</div>
+              </div>
+              <div class="card-custom card-interactive" role="listitem" tabindex="0" data-item="tulipa"
+                aria-label="Tulipa">
+                <img src="./assets/img/cortes de carne (frango)/tulipa de frango.jpg"
+                  alt="Espetos de tulipas de frango grelhadas em prato rústico" loading="lazy"
+                  onerror="this.onerror=null;this.src='https://placehold.co/400x225/png?text=Imagem+indisponível';" />
+                <div class="card-label text-capitalize">tulipa</div>
+              </div>
+              <div class="card-custom card-interactive d-flex align-items-center justify-content-center" role="listitem"
+                tabindex="0" data-item="outro" aria-label="Outro tipo de corte" style="font-size:1.2rem;">
+                <div class="card-label m-0">Outro...</div>
+              </div>
+              <button class="btn btn-danger next-btn" aria-label="Ir para a próxima tela" id="btnNext4" type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next" disabled>
+                Continuar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 0 .5.5h11.793l-4.147 4.146a.5.5 0 0 0 .708.708l5-5a.5.5 0 0 0 0-.708l-5-5a.5.5 0 1 0-.708.708L13.293 7.5H1.5A.5.5 0 0 0 1 8z" />
+                </svg>
+              </button>
+            </div>
+          </section>
+        </main>
+      </div>
+
+    </div>
+  </div>
 
   <a href="index.html">
-    <button>Voltar pra home</button>
+    <button>home</button>
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/script.js"></script>
-
 </body>
 
 </html>
