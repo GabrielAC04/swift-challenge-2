@@ -154,7 +154,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Highlight selected card */
 .selected {
     box-shadow: 0 0 12px 3px #ffd5aa !important;
     transform: translateY(-3px) !important;
@@ -165,6 +164,86 @@ body {
     align-self: flex-end;
     margin-left: auto;
     box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
+}
+
+#tela2 .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 500px;
+  grid-template-rows: auto auto;
+}
+
+#tela2 .card-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;          
+  border: 2px solid #f36c21;       
+  color: #f36c21;                  
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;            
+  border-radius: 20px;             
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap;         
+}
+
+#tela2 .card-custom:hover,
+#tela2 .card-custom:focus,
+#tela2 .card-custom.selected {
+  background-color: #f36c21;
+  color: #fff;
+  outline: none;
+}
+
+#tela2 .next-btn {
+  grid-column: 1 / -1; 
+  justify-self: end;    
+  margin-top: 10px;
+}
+
+#tela1 .cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.input-group {
+  position: relative;
+  border-radius:20px;
+}
+
+.input-group input {
+  width: 100%;
+  border-radius:10px;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.input-group .input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.cep-link {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #612700;
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: center;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -185,6 +264,7 @@ body {
 
     .chat-container {
         margin-inline: 10px;
+        margin-bottom: 20px;
     }
 
     .chat-bubble {
